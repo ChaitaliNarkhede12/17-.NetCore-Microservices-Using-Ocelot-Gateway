@@ -1,0 +1,83 @@
+{
+  //"Routes": [
+  //  {
+  //    "DownstreamPathTemplate": "/api/user/getData",
+  //    "DownstreamScheme": "http",
+  //    "DownstreamHostAndPorts": [
+  //      {
+  //        "Host": "localhost",
+  //        "Port": 33038
+  //      }
+  //    ],
+  //    "UpstreamPathTemplate": "/gateway/getData",
+  //    "UpstreamHttpMethod": [ "Get" ]
+  //  },
+
+  //  {
+  //    "DownstreamPathTemplate": "/api/user/getData/{id}",
+  //    "DownstreamScheme": "http",
+  //    "DownstreamHostAndPorts": [
+  //      {
+  //        "Host": "localhost",
+  //        "Port": 33038
+  //      }
+  //    ],
+  //    "UpstreamPathTemplate": "/gateway/getData/{id}",
+  //    "UpstreamHttpMethod": [ "Get" ]
+  //  }
+  //]
+
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/user",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 33038
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/user/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 33038
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/student",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8886
+        }
+      ],
+      "UpstreamPathTemplate": "/gatewayStud",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/student/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8886
+        }
+      ],
+      "UpstreamPathTemplate": "/gatewayStud/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+    }
+  ]
+}
